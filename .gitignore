@@ -1,0 +1,27 @@
+# RAGify - Git Ignore Configuration
+
+# API Keys & Local Secrets
+.env
+
+# Python Environment
+venv/
+.venv/
+env/
+dist/
+build/
+*.egg-info/
+
+# Compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Vector Database and Document Data Store
+chroma_db/
+data/
+
+# IDE files
+.vscode/
+.idea/
+.DS_Store
