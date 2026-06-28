@@ -91,15 +91,3 @@ streamlit run app.py
 This will automatically open the application in your default web browser (usually at `http://localhost:8501`).
 
 ---
-
-## ✨ Features Checklist
-- [x] **Multi-File Uploads**: Supports multiple PDF and TXT files simultaneously.
-- [x] **Auto-indexing**: Loads, chunks (Recursive Splitter), embeds (OpenAI or Gemini), and persists.
-- [x] **ChatGPT Conversation Interface**: Beautiful user/assistant chat history.
-- [x] **Memory Management**: Remembers context from previous questions.
-- [x] **Sources & Citation Tracker**: Shows document snippets, file names, page numbers, and similarity metrics.
-- [x] **Performance Statistics**: Real-time response speed (seconds), chunk counts, and similarity scores.
-- [x] **Download History**: Clean button to export the chat as a `.txt` file.
-- [x] **Database Rebuilding**: Wipes the DB and restarts files cache cleanly.
-
----
