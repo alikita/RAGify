@@ -23,22 +23,6 @@ graph TD
     J --> K[LLM: GPT-4o-mini / Gemini-1.5-flash]
     K --> L[Generate Grounded Answer]
     L --> M[Display Answer & Source Citations]
-```
-
----
-
-## 🧠 Core AI Concepts (Interview Ready)
-
-* **What is RAG?**
-  Retrieval-Augmented Generation (RAG) is a technique that references external knowledge bases (like vector databases) to provide grounding context to a Large Language Model (LLM) before generating answers. This prevents the model from hallucinating and ensures its knowledge is accurate.
-* **Why Chunking?**
-  Large documents exceed LLM input tokens and contain irrelevant noise. Splitting files into smaller chunks (e.g., 500 characters with 100 overlap) isolates distinct facts and reduces processing costs.
-* **Why Embeddings?**
-  Embeddings translate text into dense, high-dimensional vector representations. Similarity in vector space corresponds to similarity in meaning, allowing semantic searches rather than simple keyword matches.
-* **How Vector Search Works?**
-  When a question is asked, its embedding vector is generated. A distance algorithm (e.g., Cosine Similarity) compares it against stored chunk vectors in ChromaDB to retrieve the most semantically related chunks.
-* **Why ChromaDB?**
-  ChromaDB is a lightweight, serverless vector database designed for fast AI workflows. It runs directly on the local filesystem, avoiding expensive cloud database host configurations.
 
 ---
 
@@ -127,41 +111,6 @@ This will automatically open the application in your default web browser (usuall
 
 ---
 
-## 🐙 How to Upload to GitHub
-
-Keep your API keys safe by following these commands to upload your code to GitHub:
-
-1. **Verify your `.gitignore` is present**:
-   Ensure `.gitignore` is in the root directory. It contains `.env`, `chroma_db/`, and `venv/` so you don't leak credentials or commit heavy local build directories.
-
-2. **Initialize Git**:
-   ```bash
-   git init
-   ```
-
-3. **Stage and Commit**:
-   ```bash
-   git add .
-   git commit -m "Initial commit - RAGify complete"
-   ```
-
-4. **Create Repository on GitHub**:
-   - Go to your GitHub account and click **New Repository**.
-   - Enter `RAGify` as the repository name.
-   - **Do NOT** check "Add a README file" or "Add .gitignore" (we already have them!).
-   - Click **Create repository**.
-
-5. **Link and Push**:
-   Copy the commands from the GitHub instruction page and run:
-   ```bash
-   git branch -M main
-   git remote add origin https://github.com/your-username/RAGify.git
-   git push -u origin main
-   ```
-   *(Replace `your-username` with your actual GitHub username).*
-
----
-
 ## ✨ Features Checklist
 - [x] **Multi-File Uploads**: Supports multiple PDF and TXT files simultaneously.
 - [x] **Auto-indexing**: Loads, chunks (Recursive Splitter), embeds (OpenAI or Gemini), and persists.
@@ -173,8 +122,3 @@ Keep your API keys safe by following these commands to upload your code to GitHu
 - [x] **Database Rebuilding**: Wipes the DB and restarts files cache cleanly.
 
 ---
-
-## 🔮 Future Improvements
-- **Hybrid Search**: Combine vector search with keyword search (BM25) for better text matching.
-- **Reranking**: Integrate Cohere or cross-encoders to rerank the top retrieved chunks before feeding them to the LLM.
-- **OCR Support**: Add optical character recognition (e.g., via PyTesseract) to handle scanned image PDFs.
