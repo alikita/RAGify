@@ -6,25 +6,6 @@ The application is built using **Python, Streamlit, LangChain, ChromaDB**, and s
 
 ---
 
-## 📐 Architecture Flow
-
-```mermaid
-graph TD
-    A[Upload PDF/TXT] --> B[Document Loader: PyPDFLoader / TextLoader]
-    B --> C[Text Splitter: RecursiveCharacterTextSplitter]
-    C --> D[Generate Embeddings: OpenAI / Google Gemini]
-    D --> E[(Persistent ChromaDB Vector Store)]
-    
-    F[User Question] --> G[Query Embedding]
-    G --> H[Vector Search in ChromaDB]
-    E --> H
-    H -->|Top 4 chunks + scores| I[Context Builder]
-    I --> J[Prompt Construction: System + Chat History + Context]
-    J --> K[LLM: GPT-4o-mini / Gemini-1.5-flash]
-    K --> L[Generate Grounded Answer]
-    L --> M[Display Answer & Source Citations]
-
----
 
 ## 🔑 How to Get a Free API Key
 
